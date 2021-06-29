@@ -1,0 +1,111 @@
+<html lang="pt-br">
+ <head> 
+  <meta charset="utf-8"> 
+ </head> 
+ <body> <!--titulo-->
+ <title>
+   DsV-TIMER
+ </title>
+ <br>
+ <br>
+ <br>
+ <!--titulo h1-->
+ <!--divs-->
+ <h1>DsV-Timer</h1>
+  <div class="wrapper"> 
+   <div class="display"> 
+    <div id="time"> 
+    </div> 
+   </div> 
+   <!--roda pé-->
+   <small>
+     DsV-HCK101
+     <br>
+     DsV-Timer
+   </small>
+   <span></span> 
+   <span></span> 
+  </div> 
+  <!--parte java script-->
+  <script>
+      setInterval(()=>{
+        const time = document.querySelector(".display #time");
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let day_night = "AM";
+        if(hours > 12){
+          day_night = "PM";
+          hours = hours - 12;
+        }
+        if(seconds < 10){
+          seconds = "0" + seconds;
+        }
+        if(minutes < 10){
+          minutes = "0" + minutes;
+        }
+        if(hours < 10){
+          hours = "0" + hours;
+        }
+        time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+      });
+    </script> 
+     <style>
+     				body {
+    font-size: 15pt;
+}
+style>
+      
+      body {
+    font-size: 15pt;
+}
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+body {
+background-color:#05082C;
+  text-align:center;
+  color:#00FF0E;
+  font-size:70px;
+}
+
+#clock {
+  font-family: 'Orbitron', sans-serif;
+  color:#00FF0E;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  
+}
+
+small {
+  font-family: monospace;
+  font-size: 13px;
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+  color: red;
+}
+h1{
+  color:black;
+  font-size:20pt;
+  background-color:white;
+  border-radius:50px;
+}
+div{
+  background-color:black;
+  border-radius:50px;
+  box-shadow:3px 4px 1px 1px whitesmoke;
+}
+     				
+     				
+     				
+     				
+     				
+     				
+     				
+     </style>
+ </body>
+</html>
